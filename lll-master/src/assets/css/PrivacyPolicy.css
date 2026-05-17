@@ -1,0 +1,194 @@
+/* ===============================
+   PRIVACY POLICY PAGE
+   =============================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&display=swap');
+
+/* Page wrapper — light blue-grey background */
+.pap-page {
+  min-height: 100vh;
+  background: #e8eaf2;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 60px 20px 80px;
+  box-sizing: border-box;
+  font-family: "Nunito", sans-serif;
+}
+
+/* White card */
+.pap-card {
+  background: #ffffff;
+  border-radius: 20px;
+  width: 100%;
+  max-width: 72vw;
+  padding: 60px 72px 64px;
+  box-sizing: border-box;
+  box-shadow: 0 4px 40px rgba(60, 72, 120, 0.08);
+}
+
+/* ── Header ── */
+.pap-header {
+  text-align: center;
+  margin-bottom: 52px;
+}
+
+.pap-title {
+  font-family: "Nunito", sans-serif;
+  font-size: 42px;
+  font-weight: 900;
+  color: #3a3fd4;
+  margin: 0 0 16px;
+  letter-spacing: -0.5px;
+}
+
+/* Short blue underline bar */
+.pap-title-bar {
+  width: 60px;
+  height: 4px;
+  background: #3a3fd4;
+  border-radius: 2px;
+  margin: 0 auto;
+}
+
+/* ── Sections ── */
+.pap-body {
+  display: flex;
+  flex-direction: column;
+}
+
+.pap-section {
+  padding: 28px 0 24px;
+  border-bottom: 1px solid #f0f0f5;
+}
+
+.pap-section:last-of-type {
+  border-bottom: none;
+}
+
+.pap-section-title {
+  font-family: "Nunito", sans-serif;
+  font-size: 22px;
+  font-weight: 800;
+  color: #1a1a2e;
+  margin: 0 0 16px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  letter-spacing: -0.2px;
+}
+
+.pap-icon {
+  font-size: 18px;
+  line-height: 1;
+  margin-right: 2px;
+}
+
+/* Section body text */
+.pap-section-content p {
+  font-size: 15.5px;
+  color: #4a4a6a;
+  line-height: 1.85;
+  margin: 0 0 10px;
+}
+
+.pap-section-content p:last-child {
+  margin-bottom: 0;
+}
+
+/* Bullet lists */
+.pap-section-content ul {
+  margin: 10px 0 0 0;
+  padding-left: 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.pap-section-content ul li {
+  font-size: 15px;
+  color: #4a4a6a;
+  line-height: 1.7;
+  list-style: disc;
+}
+
+/* ── Subsection (Personal Info / Auto Collected) ── */
+.pap-subsection {
+  margin-bottom: 22px;
+}
+
+.pap-subsection:last-child {
+  margin-bottom: 0;
+}
+
+.pap-sub-title {
+  font-family: "Nunito", sans-serif;
+  font-size: 16px;
+  font-weight: 800;
+  color: #1a1a2e;
+  margin: 0 0 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Bullet dot for sub-titles — matches screenshots */
+.pap-dot {
+  width: 8px;
+  height: 8px;
+  min-width: 8px;
+  border-radius: 50%;
+  background: #3a3fd4;
+  display: inline-block;
+}
+
+/* Contact lines */
+.pap-contact-line {
+  font-size: 15px !important;
+  color: #4a4a6a !important;
+  margin: 4px 0 !important;
+}
+
+/* Last Updated */
+.pap-last-updated {
+  margin-top: 36px;
+  font-size: 15px;
+  color: #4a4a6a;
+  padding-top: 24px;
+  border-top: 1px solid #f0f0f5;
+}
+
+.pap-last-updated strong {
+  color: #1a1a2e;
+  font-weight: 800;
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .pap-card {
+    padding: 40px 28px 48px;
+    border-radius: 14px;
+  }
+
+  .pap-title {
+    font-size: 30px;
+  }
+
+  .pap-section-title {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .pap-page {
+    padding: 30px 12px 50px;
+  }
+
+  .pap-card {
+    padding: 32px 20px 40px;
+  }
+
+  .pap-title {
+    font-size: 26px;
+  }
+}

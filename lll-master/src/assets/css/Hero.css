@@ -1,0 +1,320 @@
+/* ===============================
+   HERO.CSS
+   All styles scoped to Hero.jsx
+   classes only — extracted from
+   global style.css
+   =============================== */
+
+:root {
+  --primary-green: #00c89e;
+}
+
+/* ===========================
+   HERO SECTION WRAPPER
+=========================== */
+
+.hero-section {
+  background: #ffffff;
+  overflow: hidden;
+  width: 100%;
+  height: 100vh;
+}
+
+/* ===========================
+   SWIPER SLIDER
+=========================== */
+
+.hs-slider {
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+}
+
+.hs-slider .swiper-wrapper {
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Dim non-active slides */
+.hs-slider .swiper-slide {
+  /* Let Swiper handle all transitions */
+  transition: none;
+}
+
+.hs-slider .swiper-slide:not(.swiper-slide-active) {
+  /* Remove manual opacity/transform - let Swiper handle this */
+}
+
+/* ===========================
+   EACH SLIDE ITEM
+=========================== */
+
+.hs-item {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding-left: 60px;
+  height: 100vh;
+  min-height: 100vh;
+
+  /* background image via set-bg + inline style */
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.hs-item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.15) 0%, rgba(0, 0, 0, 0.05) 100%);
+  pointer-events: none;
+}
+
+/* ===========================
+   WHITE CARD OVERLAY
+=========================== */
+
+.hc-inner-text {
+  background: linear-gradient(135deg, #ffffff 0%, #f8fafb 100%);
+  padding: 50px 55px;
+  overflow: hidden;
+  display: inline-block;
+  position: relative;
+  max-width: 580px;
+  border-radius: 16px;
+  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.18), inset 0 1px 0 rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  z-index: 10;
+
+  /* Reset animation values from global (opacity:0 top:100px) */
+  opacity: 1;
+  top: 0;
+  transition: all 0.5s ease-out;
+}
+
+.hc-inner-text:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 35px 85px rgba(0, 0, 0, 0.22), inset 0 1px 0 rgba(255, 255, 255, 0.7);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ===========================
+   LEFT TEXT BLOCK
+=========================== */
+
+.hc-text {
+  float: left;
+  margin-right: 0;
+}
+
+.hc-text h4 {
+  color: #0f0f0f;
+  font-weight: 800;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  margin-top: 0;
+  font-family: "Montserrat", sans-serif;
+  font-size: 36px;
+  letter-spacing: 0.8px;
+  line-height: 1.2;
+}
+
+.hc-text p {
+  color: #555555;
+  font-size: 15px;
+  font-family: "Montserrat", sans-serif;
+  margin: 0 0 14px;
+  line-height: 24px;
+  font-weight: 600;
+}
+
+.hc-text p span {
+  color: var(--primary-green);
+  font-weight: 600;
+}
+
+/* FOR RENT / FOR SALE badge */
+.hc-text .label {
+  font-size: 11px;
+  display: inline-block;
+  text-transform: uppercase;
+  color: #ffffff;
+  padding: 7px 16px;
+  background: linear-gradient(135deg, #3371c2 0%, #2155a0 100%);
+  font-weight: 800;
+  margin-right: 0;
+  margin-bottom: 16px;
+  font-family: "Montserrat", sans-serif;
+  border-radius: 5px;
+  letter-spacing: 1.2px;
+  box-shadow: 0 4px 12px rgba(48, 104, 178, 0.3);
+}
+
+/* Price heading */
+.hc-text h5 {
+  color: var(--primary-green);
+  font-weight: 800;
+  display: inline-block;
+  font-size: 26px;
+  font-family: "Montserrat", sans-serif;
+  margin: 0;
+  letter-spacing: 0.5px;
+}
+
+.hc-text h5 span {
+  color: #888888;
+  font-weight: 600;
+  font-size: 14px;
+  margin-left: 4px;
+}
+
+/* ===========================
+   WIDGET (icons list)
+=========================== */
+
+.hc-widget {
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+  right: 0;
+  top: 0;
+  padding: 0;
+  margin: 0;
+  margin-top: 18px;
+  padding-top: 16px;
+  border-top: 1px solid #e8e8e8;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.hc-widget li {
+  font-size: 14px;
+  color: #2a2a2a;
+  font-weight: 700;
+  list-style: none;
+  width: auto;
+  float: left;
+  margin-bottom: 0;
+  font-family: "Montserrat", sans-serif;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.hc-widget li i {
+  font-size: 15px;
+  color: var(--primary-green);
+  margin-right: 0;
+}
+
+/* ===========================
+   SWIPER PAGINATION
+=========================== */
+
+.hs-slider .swiper-pagination {
+  bottom: 32px !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  width: auto !important;
+  display: flex !important;
+  justify-content: center !important;
+}
+
+.hs-slider .swiper-pagination-bullet {
+  width: 10px;
+  height: 10px;
+  background: rgba(255, 255, 255, 0.5);
+  opacity: 1;
+  margin: 0 8px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 50%;
+  border: 1.5px solid rgba(255, 255, 255, 0.3);
+}
+
+.hs-slider .swiper-pagination-bullet:hover {
+  background: rgba(255, 255, 255, 0.7);
+}
+
+.hs-slider .swiper-pagination-bullet-active {
+  background: var(--primary-green);
+  width: 14px;
+  border-radius: 50%;
+  box-shadow: 0 4px 12px rgba(0, 200, 158, 0.4);
+  border-color: var(--primary-green);
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+
+/* Tablet */
+@media (max-width: 992px) {
+  .hs-item {
+    height: 100vh;
+    padding-left: 30px;
+  }
+
+  .hc-widget {
+    right: 0;
+    width: 160px;
+  }
+
+  .hc-inner-text {
+    max-width: 480px;
+    padding: 35px 40px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+  .hs-item {
+    height: 100vh;
+    padding-left: 20px;
+    padding-right: 20px;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .hc-inner-text {
+    padding: 30px 25px;
+    width: 100%;
+    max-width: 100%;
+    border-radius: 8px;
+  }
+
+  .hc-text {
+    float: none;
+    margin-right: 0;
+    margin-bottom: 16px;
+  }
+
+  .hc-widget {
+    overflow: hidden;
+    width: auto;
+    position: relative;
+    right: 0;
+    top: 0;
+  }
+}
+
+/* Small mobile */
+@media (max-width: 479px) {
+  .hc-inner-text {
+    padding: 20px 15px;
+  }
+
+  .hc-text h4 {
+    font-size: 22px;
+  }
+
+  .hc-text h5 {
+    font-size: 16px;
+  }
+}
+}

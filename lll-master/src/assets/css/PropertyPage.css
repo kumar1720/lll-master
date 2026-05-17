@@ -1,0 +1,210 @@
+/* ===============================
+   PROPERTIESPAGE.CSS
+   Hero banner + grid layout for
+   the Properties listing page.
+   Card styles live in PropertyCard.css
+   =============================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap');
+
+:root {
+  --primary-green: #00c89e;
+  --dark-green: #103230;
+}
+
+/* ===========================
+   HERO BANNER
+=========================== */
+
+.pp-hero {
+  width: 100%;
+  height: 360px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+/* Dark overlay */
+.pp-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+}
+
+/* White breadcrumb card — bottom-left */
+.pp-breadcrumb {
+  position: relative;
+  z-index: 1;
+  background: #ffffff;
+  padding: 28px 40px 26px;
+  margin-left: 160px;
+  min-width: 240px;
+}
+
+.pp-breadcrumb h2 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 20px;
+  font-weight: 800;
+  color: #111111;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin: 0 0 10px;
+}
+
+.pp-trail {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.pp-trail-home {
+  font-size: 13px;
+  color: #111111;
+}
+
+.pp-trail-link {
+  font-size: 14px;
+  font-weight: 500;
+  color: #111111;
+  text-decoration: none;
+  font-family: "Montserrat", sans-serif;
+  transition: color 0.2s ease;
+}
+
+.pp-trail-link:hover {
+  color: var(--primary-green);
+}
+
+.pp-trail-arrow {
+  font-size: 10px;
+  color: #888888;
+}
+
+.pp-trail-current {
+  font-size: 14px;
+  color: #888888;
+  font-weight: 400;
+  font-family: "Montserrat", sans-serif;
+}
+
+/* ===========================
+   MAIN CONTENT SECTION
+=========================== */
+
+.pp-content {
+  padding: 70px 0 80px;
+  background: #ffffff;
+}
+
+/* ===========================
+   SECTION TITLE
+   (teal left bar, bold caps)
+=========================== */
+
+.pp-section-title {
+  margin-bottom: 40px;
+}
+
+.pp-section-title h4 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 22px;
+  font-weight: 800;
+  color: #111111;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  position: relative;
+  padding-left: 20px;
+  margin: 0;
+}
+
+/* Teal left bar */
+.pp-section-title h4::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: -4px;
+  bottom: -4px;
+  width: 4px;
+  background: var(--primary-green);
+  border-radius: 2px;
+}
+
+/* ===========================
+   PROPERTY CARDS GRID
+=========================== */
+
+.pp-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin-bottom: 50px;
+}
+
+/* ===========================
+   LOAD MORE BUTTON
+=========================== */
+
+.pp-loadmore {
+  text-align: center;
+}
+
+.pp-loadmore-btn {
+  display: inline-block;
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  padding: 16px 50px;
+  background: var(--dark-green);
+  border: none;
+  cursor: pointer;
+  transition: background 0.25s ease, transform 0.2s ease;
+}
+
+.pp-loadmore-btn:hover {
+  background: var(--primary-green);
+  transform: translateY(-2px);
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+
+@media (max-width: 992px) {
+  .pp-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .pp-breadcrumb {
+    margin-left: 80px;
+  }
+}
+
+@media (max-width: 600px) {
+  .pp-hero {
+    height: 260px;
+  }
+
+  .pp-breadcrumb {
+    margin-left: 20px;
+    padding: 20px 24px 18px;
+  }
+
+  .pp-breadcrumb h2 {
+    font-size: 16px;
+  }
+
+  .pp-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .pp-content {
+    padding: 45px 0 55px;
+  }
+}

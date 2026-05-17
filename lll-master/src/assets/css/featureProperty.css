@@ -1,0 +1,212 @@
+/* ===============================
+FEATURE PROPERTY
+=============================== */
+
+.feature-property-section {
+  padding: 80px 0;
+  background: #f5f5f5;
+  overflow-x: hidden;
+  /* ✅ prevents horizontal bleed */
+}
+
+.feature-wrapper {
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 15px;
+  /* ✅ prevents edge overflow on smaller screens */
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 2px;
+  align-items: stretch;
+  box-sizing: border-box;
+  /* ✅ padding included in width calculation */
+}
+
+/* LEFT PANEL */
+
+.feature-left {
+  background: #0f3f3a;
+  padding: 40px 35px;
+  color: #fff;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-sizing: border-box;
+  /* ✅ */
+}
+
+.feature-left h2 {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 35px;
+  position: relative;
+  padding-left: 20px;
+}
+
+.feature-left h2::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 5px;
+  width: 4px;
+  height: 30px;
+  background: var(--primary-green);
+}
+
+.feature-category {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.feature-category li {
+  padding: 18px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.feature-category li:hover {
+  color: var(--primary-green);
+}
+
+/* Button */
+
+.view-property-btn {
+  margin-top: 35px;
+  width: 100%;
+  padding: 14px;
+  background: #fff;
+  color: #0f3f3a;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  box-sizing: border-box;
+  /* ✅ */
+}
+
+/* RIGHT SIDE */
+
+.feature-right {
+  height: 100%;
+  min-width: 0;
+  /* ✅ critical: prevents grid child from overflowing */
+}
+
+.feature-slider {
+  height: 100%;
+}
+
+.feature-slide {
+  height: 100%;
+  min-height: 520px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+/* Overlay */
+
+.feature-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 35px;
+  color: #fff;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.75));
+  box-sizing: border-box;
+  /* ✅ */
+}
+
+.feature-overlay h3 {
+  font-size: 28px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.location {
+  font-size: 14px;
+  margin-bottom: 15px;
+  color: #fff;
+  opacity: 0.9;
+}
+
+/* Buttons */
+
+.feature-buttons {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.rent-btn {
+  background: #27ae60;
+  padding: 6px 12px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.contact-btn {
+  background: var(--primary-green);
+  border: none;
+  padding: 6px 12px;
+  color: #fff;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.feature-more-btn {
+  background: rgba(255, 255, 255, 0.18);
+}
+
+.retry-btn {
+  margin-top: 16px;
+  background: var(--primary-green);
+  border: none;
+  padding: 10px 18px;
+  color: #fff;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+/* Details */
+
+.feature-details {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+  font-size: 14px;
+}
+
+.feature-details span {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* Responsive */
+
+@media (max-width: 992px) {
+  .feature-wrapper {
+    grid-template-columns: 1fr;
+    padding: 0 15px;
+  }
+
+  .feature-left {
+    text-align: center;
+  }
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 15px;
+  box-sizing: border-box;
+  /* ✅ */
+}

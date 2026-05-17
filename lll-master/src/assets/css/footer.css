@@ -1,0 +1,281 @@
+/* ============================================================
+   Footer.css — Lagan Lakshmi Infra Footer
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Open+Sans:wght@400;500&display=swap');
+
+/* ── Root variables ───────────────────────────────────────── */
+:root {
+  --footer-bg: #0b2f2a;
+  --footer-bg-deep: #091f1c;
+  --footer-accent: #1abc9c;
+  --footer-accent-hover: #13a880;
+  --footer-text: #c8ddd9;
+  --footer-text-muted: #7fa89f;
+  --footer-border: rgba(255, 255, 255, 0.08);
+  --footer-input-bg: rgba(255, 255, 255, 0.06);
+  --footer-social-bg: rgba(255, 255, 255, 0.08);
+  --footer-social-hover: rgba(255, 255, 255, 0.16);
+  --radius-sm: 6px;
+  --radius-md: 10px;
+}
+
+/* ── Footer shell ─────────────────────────────────────────── */
+.footer {
+  background-color: var(--footer-bg);
+  color: var(--footer-text);
+  font-family: 'Open Sans', sans-serif;
+  padding: 60px 0 0;
+  width: 100%;
+}
+
+/* ── Main grid ────────────────────────────────────────────── */
+.footer__container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
+  display: grid;
+  grid-template-columns: 1.6fr 1fr 1fr 1.6fr;
+  gap: 40px;
+  align-items: start;
+}
+
+/* ── Brand column ─────────────────────────────────────────── */
+.footer__brand {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.footer__logo-wrapper {
+  width: 130px;
+  height: 130px;
+  background: #fff;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.footer__logo {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 8px;
+}
+
+.footer__tagline {
+  font-size: 14px;
+  line-height: 1.75;
+  color: var(--footer-text);
+  max-width: 340px;
+  margin: 0;
+}
+
+/* ── Social icons ─────────────────────────────────────────── */
+.footer__socials {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 4px;
+}
+
+.footer__social-btn {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: var(--footer-social-bg);
+  border: 1px solid var(--footer-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--footer-text);
+  text-decoration: none;
+  transition: background 0.2s ease, transform 0.2s ease, color 0.2s ease;
+}
+
+.footer__social-btn:hover {
+  background: var(--footer-social-hover);
+  color: var(--footer-accent);
+  transform: translateY(-2px);
+}
+
+/* ── Link columns ─────────────────────────────────────────── */
+.footer__col {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.footer__col-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1.4px;
+  color: #fff;
+  margin: 0 0 6px;
+  text-transform: uppercase;
+}
+
+.footer__links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.footer__links li a {
+  color: var(--footer-text);
+  text-decoration: none;
+  font-size: 14.5px;
+  font-weight: 400;
+  transition: color 0.2s ease, padding-left 0.2s ease;
+  display: inline-block;
+}
+
+.footer__links li a:hover {
+  color: var(--footer-accent);
+  padding-left: 4px;
+}
+
+/* ── Newsletter column ────────────────────────────────────── */
+.footer__col--newsletter {
+  gap: 16px;
+}
+
+.footer__newsletter-desc {
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--footer-text);
+  margin: 0;
+}
+
+.footer__newsletter-input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  background: var(--footer-input-bg);
+  border: 1px solid var(--footer-border);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+}
+
+.footer__newsletter-input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  padding: 13px 16px;
+  font-size: 14px;
+  color: #fff;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.footer__newsletter-input::placeholder {
+  color: var(--footer-text-muted);
+}
+
+.footer__newsletter-icon {
+  padding: 0 14px;
+  color: var(--footer-text-muted);
+  display: flex;
+  align-items: center;
+  pointer-events: none;
+}
+
+.footer__subscribe-btn {
+  background: var(--footer-accent);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius-sm);
+  padding: 14px 28px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.15s ease;
+  align-self: flex-start;
+}
+
+.footer__subscribe-btn:hover {
+  background: var(--footer-accent-hover);
+  transform: translateY(-1px);
+}
+
+.footer__subscribe-btn:active {
+  transform: translateY(0);
+}
+
+/* ── Divider ──────────────────────────────────────────────── */
+.footer__divider {
+  max-width: 1200px;
+  margin: 40px auto 0;
+  padding: 0 40px;
+  height: 1px;
+  background: var(--footer-border);
+}
+
+/* ── Bottom bar ───────────────────────────────────────────── */
+.footer__bottom {
+  background-color: var(--footer-bg-deep);
+  padding: 18px 40px;
+  text-align: center;
+  margin-top: 0;
+}
+
+.footer__bottom p {
+  margin: 0;
+  font-size: 13px;
+  color: var(--footer-text-muted);
+  letter-spacing: 0.3px;
+}
+
+/* ── Responsive ───────────────────────────────────────────── */
+@media (max-width: 1024px) {
+  .footer__container {
+    grid-template-columns: 1fr 1fr;
+    gap: 36px;
+  }
+
+  .footer__brand {
+    grid-column: 1 / -1;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 24px;
+  }
+
+  .footer__tagline {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 640px) {
+  .footer__container {
+    grid-template-columns: 1fr;
+    padding: 0 24px;
+    gap: 30px;
+  }
+
+  .footer__brand {
+    flex-direction: column;
+  }
+
+  .footer__divider {
+    padding: 0 24px;
+  }
+
+  .footer__bottom {
+    padding: 16px 24px;
+  }
+
+  .footer__subscribe-btn {
+    width: 100%;
+    text-align: center;
+  }
+}

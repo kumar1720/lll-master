@@ -1,0 +1,129 @@
+/* ===============================
+   CONTACT MAP — all classes prefixed
+   with "cmap-" to avoid collisions
+   with Header.css (.contact-wrapper,
+   .contact-item etc.)
+   =============================== */
+
+.cmap-section {
+  width: 100%;
+  background: #f0f0f0;
+}
+
+/* Two-column flex row */
+.cmap-wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  width: 100%;
+}
+
+/* ── Left panel ── */
+.cmap-left {
+  width: 50%;
+  flex-shrink: 0;
+  background: #f0f0f0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 48px;
+  padding: 60px 50px 60px 80px;
+  box-sizing: border-box;
+}
+
+/* Single row: icon + text */
+.cmap-item {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 24px;
+}
+
+/* Green circle */
+.cmap-icon {
+  width: 60px;
+  height: 60px;
+  min-width: 60px;
+  border-radius: 50%;
+  background: #1abc9c;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 6px 20px rgba(26, 188, 156, 0.3);
+}
+
+/* Info text */
+.cmap-info h4 {
+  font-size: 18px;
+  font-weight: 700;
+  color: #111;
+  margin: 0 0 6px;
+  font-family: "Montserrat", sans-serif;
+}
+
+.cmap-info p {
+  font-size: 15px;
+  color: #555;
+  margin: 0;
+  line-height: 1.6;
+  font-family: "Montserrat", sans-serif;
+}
+
+/* ── Right panel: Map ── */
+.cmap-right {
+  flex: 1;
+  height: 560px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.cmap-right iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* ── Responsive ── */
+@media (max-width: 900px) {
+  .cmap-wrapper {
+    flex-direction: column;
+  }
+
+  .cmap-left {
+    width: 100%;
+    padding: 50px 30px;
+    gap: 36px;
+  }
+
+  .cmap-right {
+    width: 100%;
+    height: 400px;
+  }
+}
+
+@media (max-width: 480px) {
+  .cmap-left {
+    padding: 40px 20px;
+    gap: 30px;
+  }
+
+  .cmap-icon {
+    width: 50px;
+    height: 50px;
+    min-width: 50px;
+  }
+
+  .cmap-info h4 {
+    font-size: 16px;
+  }
+
+  .cmap-info p {
+    font-size: 14px;
+  }
+
+  .cmap-right {
+    height: 300px;
+  }
+}

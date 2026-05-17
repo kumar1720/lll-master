@@ -1,0 +1,380 @@
+/* ===============================
+   SEARCHSECTION.CSS
+   All styles scoped to
+   SearchSection.jsx classes only
+   — extracted from global style.css
+   =============================== */
+
+:root {
+  --primary-green: #00c89e;
+  --light-bg: #f7f7f7;
+}
+
+/* ===========================
+   SECTION WRAPPER
+=========================== */
+
+.search-section {
+  padding: 60px 0;
+  background: var(--light-bg);
+}
+
+/* ===========================
+   TOP ROW: title + toggle
+=========================== */
+
+.search-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+/* Section title with green left bar */
+.search-top h4 {
+  position: relative;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding-left: 20px;
+  font-family: "Montserrat", sans-serif;
+  color: #111111;
+  font-size: 24px;
+  margin: 0;
+}
+
+.search-top h4::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: -9px;
+  width: 5px;
+  height: calc(100% + 18px);
+  background: var(--primary-green);
+  border-radius: 1px;
+}
+
+/* ===========================
+   RENT / SALE TOGGLE BUTTONS
+=========================== */
+
+.change-btn {
+  display: flex;
+}
+
+.change-btn button {
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  padding: 12px 32px;
+  margin-left: -1px;
+  /* overlap borders */
+  cursor: pointer;
+  border: 1px solid var(--primary-green);
+  background: #ffffff;
+  color: #111111;
+  font-family: "Montserrat", sans-serif;
+  letter-spacing: 0.5px;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.change-btn button.active {
+  background: var(--primary-green);
+  color: #ffffff;
+}
+
+.change-btn button:hover:not(.active) {
+  background: rgba(0, 200, 158, 0.08);
+}
+
+/* ===========================
+   SEARCH FORM GRID
+=========================== */
+
+.search-form {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px 30px;
+  margin-bottom: 40px;
+}
+
+/* ===========================
+   REACT-SELECT OVERRIDES
+=========================== */
+
+/* Control (the visible box) */
+.react-select__control {
+  height: 55px !important;
+  min-height: 55px !important;
+  border: 1px solid #dddddd !important;
+  border-radius: 4px !important;
+  box-shadow: none !important;
+  background: #ffffff !important;
+  cursor: pointer !important;
+  transition: border-color 0.2s ease !important;
+}
+
+.react-select__control:hover {
+  border-color: var(--primary-green) !important;
+}
+
+.react-select__control--is-focused {
+  border-color: var(--primary-green) !important;
+  box-shadow: 0 0 0 2px rgba(0, 200, 158, 0.15) !important;
+}
+
+/* Placeholder text */
+.react-select__placeholder {
+  font-size: 14px;
+  font-weight: 500;
+  color: #888888 !important;
+  font-family: "Montserrat", sans-serif;
+}
+
+/* Selected value */
+.react-select__single-value {
+  font-size: 14px;
+  font-weight: 500;
+  color: #333333;
+  font-family: "Montserrat", sans-serif;
+}
+
+/* Dropdown menu */
+.react-select__menu {
+  border-radius: 4px !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12) !important;
+  overflow: hidden;
+}
+
+/* Each option */
+.react-select__option {
+  padding: 12px 15px !important;
+  font-size: 14px !important;
+  font-family: "Montserrat", sans-serif;
+  cursor: pointer !important;
+}
+
+.react-select__option--is-focused {
+  background-color: rgba(0, 200, 158, 0.1) !important;
+}
+
+.react-select__option--is-selected {
+  background-color: var(--primary-green) !important;
+  color: #ffffff !important;
+}
+
+/* Remove the separator line between value and arrow */
+.react-select__indicator-separator {
+  display: none !important;
+}
+
+/* Dropdown arrow padding */
+.react-select__dropdown-indicator {
+  padding-right: 14px !important;
+  color: #888888 !important;
+}
+
+.react-select__dropdown-indicator:hover {
+  color: var(--primary-green) !important;
+}
+
+/* Portal menu always on top */
+.react-select__menu-portal {
+  z-index: 9999 !important;
+}
+
+/* ===========================
+   RANGE SLIDERS (rc-slider)
+=========================== */
+
+.range-wrapper {
+  grid-column: span 1;
+  padding-top: 6px;
+}
+
+.range-wrapper label {
+  display: block;
+  margin-bottom: 12px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #555555;
+  font-family: "Montserrat", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}
+
+/* Track fill */
+.rc-slider-track {
+  background-color: var(--primary-green) !important;
+  height: 4px;
+}
+
+/* Background rail */
+.rc-slider-rail {
+  background-color: #dddddd !important;
+  height: 4px;
+}
+
+/* Drag handles */
+.rc-slider-handle {
+  width: 18px !important;
+  height: 18px !important;
+  margin-top: -7px !important;
+  border: 3px solid var(--primary-green) !important;
+  background: #ffffff !important;
+  box-shadow: 0 0 0 4px rgba(0, 200, 158, 0.18) !important;
+  opacity: 1 !important;
+}
+
+.rc-slider-handle:hover,
+.rc-slider-handle-dragging {
+  border-color: var(--primary-green) !important;
+  box-shadow: 0 0 0 6px rgba(0, 200, 158, 0.25) !important;
+}
+
+/* ===========================
+   SEARCH BUTTON
+=========================== */
+
+.search-btn {
+  height: 55px;
+  align-self: end;
+  background: var(--primary-green);
+  color: #ffffff;
+  border: none;
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  font-family: "Montserrat", sans-serif;
+  transition: background 0.2s ease, opacity 0.2s ease;
+  border-radius: 0;
+}
+
+.search-btn:hover {
+  background: #00a882;
+}
+
+/* ===========================
+   MORE SEARCH OPTIONS
+=========================== */
+
+.more-search {
+  margin-top: 10px;
+}
+
+.more-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  cursor: pointer;
+  margin-bottom: 22px;
+  user-select: none;
+}
+
+/* +/- toggle icon box */
+.toggle-icon {
+  background: var(--primary-green);
+  color: #ffffff;
+  width: 26px;
+  height: 26px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.more-header h5 {
+  font-size: 16px;
+  font-weight: 600;
+  color: #111111;
+  margin: 0;
+  font-family: "Montserrat", sans-serif;
+}
+
+/* ===========================
+   CHECKBOX GRID (amenities)
+=========================== */
+
+.checkbox-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px 40px;
+}
+
+.checkbox-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  color: #666666;
+  font-weight: 500;
+  font-family: "Montserrat", sans-serif;
+  cursor: pointer;
+}
+
+.checkbox-item input[type="checkbox"] {
+  width: 14px;
+  height: 14px;
+  accent-color: var(--primary-green);
+  cursor: pointer;
+  flex-shrink: 0;
+  border: 1px solid #666666;
+  border-radius: 2px;
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+
+/* Tablet */
+@media (max-width: 992px) {
+  .search-form {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .range-wrapper {
+    grid-column: span 1;
+  }
+
+  .checkbox-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .search-top {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 18px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 576px) {
+  .search-section {
+    padding: 40px 0;
+  }
+
+  .search-form {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .search-btn {
+    grid-column: span 1;
+    width: 100%;
+  }
+
+  .checkbox-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .change-btn button {
+    padding: 10px 20px;
+    font-size: 13px;
+  }
+}

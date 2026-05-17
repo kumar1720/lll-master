@@ -1,0 +1,200 @@
+/* ===============================
+   WHYCHOOSEUS.CSS
+   All styles scoped to
+   WhyChooseUs.jsx — uses wcu-
+   prefix to avoid global conflicts
+   =============================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap');
+
+:root {
+  --primary-green: #00c89e;
+}
+
+/* ===========================
+   SECTION WRAPPER
+=========================== */
+
+.wcu-section {
+  position: relative;
+  padding: 90px 0 100px;
+  background-size: cover;
+  background-position: center right;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+
+/* Dark gradient overlay — left heavy, fades right */
+.wcu-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg,
+      rgba(5, 18, 28, 0.96) 0%,
+      rgba(5, 18, 28, 0.90) 35%,
+      rgba(5, 18, 28, 0.72) 60%,
+      rgba(5, 18, 28, 0.38) 100%);
+  z-index: 0;
+}
+
+/* All children above overlay */
+.wcu-section>.container {
+  position: relative;
+  z-index: 1;
+}
+
+/* ===========================
+   TITLE BLOCK
+=========================== */
+
+.wcu-title {
+  margin-bottom: 60px;
+  max-width: 680px;
+}
+
+.wcu-title h2 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 30px;
+  font-weight: 900;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin: 0 0 20px;
+  position: relative;
+  padding-left: 22px;
+}
+
+/* Teal left bar */
+.wcu-title h2::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 2px;
+  bottom: 2px;
+  width: 4px;
+  background: var(--primary-green);
+  border-radius: 2px;
+}
+
+.wcu-title p {
+  font-family: "Montserrat", sans-serif;
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.80);
+  line-height: 1.85;
+  margin: 0;
+  padding-left: 22px;
+}
+
+/* ===========================
+   2x2 FEATURES GRID
+=========================== */
+
+.wcu-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  row-gap: 50px;
+  column-gap: 50px;
+  max-width: 700px;
+}
+
+/* ===========================
+   SINGLE FEATURE ITEM
+=========================== */
+
+.wcu-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 24px;
+}
+
+/* White circle icon */
+.wcu-icon {
+  width: 88px;
+  height: 88px;
+  min-width: 88px;
+  background: #ffffff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.25);
+  transition: background 0.25s ease, box-shadow 0.25s ease;
+}
+
+.wcu-icon svg {
+  font-size: 30px;
+  color: var(--primary-green);
+  transition: color 0.25s ease;
+}
+
+.wcu-item:hover .wcu-icon {
+  background: var(--primary-green);
+  box-shadow: 0 8px 28px rgba(0, 200, 158, 0.35);
+}
+
+.wcu-item:hover .wcu-icon svg {
+  color: #ffffff;
+}
+
+/* Text content */
+.wcu-content {
+  padding-top: 6px;
+}
+
+.wcu-content h4 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 17px;
+  font-weight: 800;
+  color: #ffffff;
+  margin: 0 0 10px;
+  line-height: 1.3;
+}
+
+.wcu-content p {
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.75);
+  line-height: 1.75;
+  margin: 0;
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+
+@media (max-width: 992px) {
+  .wcu-grid {
+    grid-template-columns: 1fr;
+    row-gap: 36px;
+    max-width: 100%;
+  }
+
+  .wcu-title h2 {
+    font-size: 24px;
+  }
+
+  .wcu-section::before {
+    background: rgba(5, 18, 28, 0.88);
+  }
+}
+
+@media (max-width: 576px) {
+  .wcu-section {
+    padding: 60px 0 70px;
+  }
+
+  .wcu-icon {
+    width: 68px;
+    height: 68px;
+    min-width: 68px;
+  }
+
+  .wcu-icon svg {
+    font-size: 24px;
+  }
+
+  .wcu-content h4 {
+    font-size: 15px;
+  }
+}

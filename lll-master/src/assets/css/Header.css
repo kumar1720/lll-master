@@ -1,0 +1,470 @@
+/* ===============================
+   HEADER.CSS
+   All styles scoped to Header.jsx
+   classes only — extracted from
+   global style.css
+   =============================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap');
+
+:root {
+  --primary-green: #00c89e;
+}
+
+/* ===========================
+   TOP BAR
+=========================== */
+
+.main-header {
+  width: 100%;
+  position: relative;
+  z-index: 100;
+}
+
+.header-top {
+  background: #ffffff;
+  padding: 14px 0;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.header-top-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* ===========================
+   LOGO
+=========================== */
+
+.logo img {
+  height: 80px;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.logo:hover img {
+  transform: scale(1.05);
+}
+
+/* ===========================
+   CONTACT WRAPPER (desktop)
+   Scoped inside .main-header
+   to avoid collision with
+   ContactMap's cmap- classes
+=========================== */
+
+.main-header .contact-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+}
+
+.main-header .contact-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.main-header .icon-box {
+  width: 42px;
+  height: 42px;
+  background: linear-gradient(135deg, #f0f5ff 0%, #e8f5ff 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.main-header .contact-item:hover .icon-box {
+  background: linear-gradient(135deg, #e0edff 0%, #d0e8ff 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 200, 158, 0.15);
+}
+
+.main-header .icon-box svg {
+  font-size: 16px;
+  color: var(--primary-green);
+}
+
+.main-header .contact-text {
+  font-size: 14px;
+  font-weight: 600;
+  color: #1a1a1a;
+  font-family: "Montserrat", sans-serif;
+  line-height: 1.4;
+}
+
+/* ===========================
+   SUBMIT PROPERTY BUTTON
+=========================== */
+
+.submit-btn {
+  background: linear-gradient(135deg, var(--primary-green) 0%, #00a882 100%);
+  color: #fff;
+  padding: 15px 32px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  border: none;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-family: "Montserrat", sans-serif;
+  transition: all 0.3s ease;
+  border-radius: 4px;
+  box-shadow: 0 4px 15px rgba(0, 200, 158, 0.25);
+}
+
+.submit-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 25px rgba(0, 200, 158, 0.35);
+}
+
+/* ===========================
+   HAMBURGER (mobile only)
+=========================== */
+
+.mobile-menu-btn {
+  display: none;
+  font-size: 22px;
+  cursor: pointer;
+  color: #111;
+}
+
+/* ===========================
+   NAVIGATION BAR
+=========================== */
+
+.header-nav {
+  border-top: 1px solid #eeeeee;
+  padding: 18px 0;
+  background: #ffffff;
+}
+
+.nav-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-menu {
+  list-style: none;
+  display: flex;
+  gap: 50px;
+  padding: 0;
+  margin: 0;
+  align-items: center;
+}
+
+.nav-menu li {
+  position: relative;
+}
+
+/* NavLink base */
+.nav-menu li a {
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: #333;
+  text-decoration: none;
+  font-family: "Montserrat", sans-serif;
+  position: relative;
+  padding-bottom: 8px;
+  transition: color 0.3s ease;
+}
+
+.nav-menu li a:hover {
+  color: var(--primary-green);
+}
+
+/* Active state — set by React Router NavLink */
+.nav-menu li a.active {
+  color: var(--primary-green);
+}
+
+.nav-menu li a.active::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -8px;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, var(--primary-green) 0%, transparent 100%);
+  border-radius: 2px;
+}
+
+.header-logout-btn {
+  border: none;
+  background: transparent;
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  color: #333;
+  font-family: "Montserrat", sans-serif;
+  transition: color 0.3s ease;
+}
+
+.header-logout-btn:hover {
+  color: var(--primary-green);
+}
+
+/* ===========================
+   SOCIAL ICONS (desktop)
+=========================== */
+
+.social-icons {
+  display: flex;
+  gap: 18px;
+  align-items: center;
+}
+
+.social-icons a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #666;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.social-icons svg {
+  font-size: 15px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.social-icons a:hover svg {
+  color: var(--primary-green);
+  transform: translateY(-2px);
+}
+
+/* ===========================
+   OVERLAY
+=========================== */
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  z-index: 998;
+}
+
+.overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* ===========================
+   SIDEBAR
+=========================== */
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: -320px;
+  width: 320px;
+  height: 100vh;
+  background: #fff;
+  padding: 40px 30px;
+  overflow-y: auto;
+  transition: left 0.3s ease;
+  z-index: 999;
+  box-shadow: 4px 0 20px rgba(0, 0, 0, 0.08);
+}
+
+.sidebar.active {
+  left: 0;
+}
+
+.sidebar-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 22px;
+  cursor: pointer;
+  color: #111;
+  transition: color 0.2s ease;
+}
+
+.sidebar-close:hover {
+  color: var(--primary-green);
+}
+
+.sidebar-logo img {
+  width: 140px;
+  display: block;
+  margin-bottom: 36px;
+}
+
+/* Sidebar nav */
+.sidebar-nav {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 32px 0;
+}
+
+.sidebar-nav li {
+  padding: 16px 0;
+  border-bottom: 1px solid #eeeeee;
+}
+
+.sidebar-nav li a {
+  display: block;
+  font-size: 15px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #111;
+  text-decoration: none;
+  font-family: "Montserrat", sans-serif;
+  transition: color 0.2s ease;
+}
+
+.sidebar-nav li a:hover,
+.sidebar-nav li a.active {
+  color: var(--primary-green);
+}
+
+.sidebar-logout-btn {
+  width: 100%;
+  text-align: left;
+  padding: 0;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  color: #111;
+}
+
+/* ===========================
+   SIDEBAR CONTACT
+=========================== */
+
+.sidebar-contact {
+  margin-top: 32px;
+}
+
+.sidebar-contact-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.sidebar-contact-item .icon-box {
+  width: 48px;
+  height: 48px;
+  min-width: 48px;
+  background: #f4f4f4;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.sidebar-contact-item .icon-box svg {
+  font-size: 18px;
+  color: var(--primary-green);
+}
+
+.sidebar-contact-item p {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+  line-height: 1.5;
+  word-break: break-word;
+  font-family: "Montserrat", sans-serif;
+}
+
+.sidebar-btn {
+  width: 100%;
+  margin: 24px 0 20px 0;
+  padding: 14px;
+  background: var(--primary-green);
+  color: #fff;
+  border: none;
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  cursor: pointer;
+  font-family: "Montserrat", sans-serif;
+  transition: background 0.2s ease;
+}
+
+.sidebar-btn:hover {
+  background: #00a882;
+}
+
+/* ===========================
+   SIDEBAR SOCIALS
+=========================== */
+
+.sidebar-socials {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  margin-top: 8px;
+}
+
+.sidebar-socials a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border: 1px solid #ddd;
+  border-radius: 50%;
+  color: #555;
+  text-decoration: none;
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.sidebar-socials a:hover {
+  background: var(--primary-green);
+  color: #fff;
+  border-color: var(--primary-green);
+}
+
+.sidebar-socials svg {
+  font-size: 15px;
+}
+
+/* ===========================
+   RESPONSIVE BREAKPOINTS
+=========================== */
+
+/* Hide desktop nav elements, show hamburger on mobile/tablet */
+@media (max-width: 992px) {
+
+  .main-header .contact-wrapper,
+  .submit-btn,
+  .header-nav {
+    display: none;
+  }
+
+  .mobile-menu-btn {
+    display: block;
+  }
+}
+
+/* Always hide hamburger on desktop */
+@media (min-width: 993px) {
+  .mobile-menu-btn {
+    display: none;
+  }
+}

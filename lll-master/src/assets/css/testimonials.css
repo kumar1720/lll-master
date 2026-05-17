@@ -1,0 +1,276 @@
+/* ===============================
+   TESTIMONIALS
+   =============================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap');
+
+.testi-section {
+  padding: 80px 0;
+  background: #fff;
+  font-family: 'Inter', sans-serif;
+}
+
+.testi-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
+  box-sizing: border-box;
+}
+
+/* ── Header ── */
+.testi-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 50px;
+}
+
+.testi-title {
+  font-size: 28px;
+  font-weight: 800;
+  color: #111;
+  letter-spacing: 0.5px;
+  position: relative;
+  padding-left: 20px;
+  margin: 0;
+}
+
+.testi-title::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 4px;
+  width: 4px;
+  height: 32px;
+  background: #1abc9c;
+  border-radius: 2px;
+}
+
+/* ── Nav Buttons ── */
+.testi-nav {
+  display: flex;
+  gap: 12px;
+}
+
+.testi-nav-btn {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: none;
+  background: #f0f0f0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #222;
+  transition: background 0.2s ease, transform 0.15s ease;
+}
+
+.testi-nav-btn:hover:not(.disabled) {
+  background: #e0e0e0;
+  transform: scale(1.05);
+}
+
+.testi-nav-btn.disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+/* ── Viewport — clips sliding cards ── */
+.testi-viewport {
+  overflow: hidden;
+  width: 100%;
+}
+
+/* ── Cards Grid ── */
+.testi-cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  /* default: visible, no animation */
+  animation: none;
+}
+
+/* Slide out to the left (going next) */
+.testi-cards.slide-out-left {
+  animation: slideOutLeft 0.38s ease forwards;
+}
+
+/* Slide out to the right (going prev) */
+.testi-cards.slide-out-right {
+  animation: slideOutRight 0.38s ease forwards;
+}
+
+@keyframes slideOutLeft {
+  0% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateX(-6%);
+    opacity: 0;
+  }
+}
+
+@keyframes slideOutRight {
+  0% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateX(6%);
+    opacity: 0;
+  }
+}
+
+/* After index updates, new cards slide in */
+.testi-cards:not(.slide-out-left):not(.slide-out-right) {
+  animation: slideIn 0.38s ease forwards;
+}
+
+@keyframes slideIn {
+  0% {
+    transform: translateX(3%);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* ── Single Card ── */
+.testi-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+/* ── Speech Bubble ── */
+.testi-bubble {
+  background: #f7f7f7;
+  border-radius: 8px;
+  padding: 36px 36px 32px;
+  position: relative;
+  flex: 1;
+}
+
+.testi-text {
+  font-size: 16px;
+  line-height: 1.75;
+  color: #444;
+  margin: 0;
+}
+
+.testi-bubble-tail {
+  position: absolute;
+  bottom: -14px;
+  left: 52px;
+  width: 0;
+  height: 0;
+  border-left: 14px solid transparent;
+  border-right: 0px solid transparent;
+  border-top: 14px solid #f7f7f7;
+}
+
+/* ── Author ── */
+.testi-author {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 28px 0 0 16px;
+}
+
+.testi-avatar {
+  width: 82px;
+  height: 82px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+  border: 3px solid #f0f0f0;
+}
+
+.testi-author-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.testi-name {
+  font-size: 18px;
+  font-weight: 700;
+  color: #111;
+  margin: 0;
+}
+
+.testi-role {
+  font-size: 14px;
+  color: #1abc9c;
+  font-weight: 600;
+}
+
+/* ── Stars ── */
+.testi-stars {
+  display: flex;
+  gap: 2px;
+  margin-top: 4px;
+}
+
+.star {
+  font-size: 18px;
+  color: #ddd;
+}
+
+.star.filled {
+  color: #f0a500;
+}
+
+/* ── Dot indicators ── */
+.testi-dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 36px;
+}
+
+.testi-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: none;
+  background: #ddd;
+  cursor: pointer;
+  padding: 0;
+  transition: background 0.25s ease, transform 0.25s ease;
+}
+
+.testi-dot.active {
+  background: #1abc9c;
+  transform: scale(1.3);
+}
+
+.testi-dot:hover:not(.active) {
+  background: #bbb;
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .testi-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .testi-container {
+    padding: 0 20px;
+  }
+
+  .testi-title {
+    font-size: 20px;
+  }
+
+  .testi-bubble {
+    padding: 24px;
+  }
+}

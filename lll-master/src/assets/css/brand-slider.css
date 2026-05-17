@@ -1,0 +1,104 @@
+/* ===============================
+   BRAND / PARTNER LOGO SLIDER
+   =============================== */
+
+.brand-section {
+  padding: 50px 0;
+  background: #fff;
+  border-top: 1px solid #ebebeb;
+  overflow: hidden;
+}
+
+/* ── Track wrapper — clips overflow and adds fade edges ── */
+.brand-track-wrapper {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+/* Fade left edge */
+.brand-track-wrapper::before,
+.brand-track-wrapper::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 120px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.brand-track-wrapper::before {
+  left: 0;
+  background: linear-gradient(to right, #fff 0%, transparent 100%);
+}
+
+.brand-track-wrapper::after {
+  right: 0;
+  background: linear-gradient(to left, #fff 0%, transparent 100%);
+}
+
+/* ── Scrolling track ── */
+.brand-track {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  width: max-content;
+  animation: brandScroll 22s linear infinite;
+}
+
+.brand-track:hover {
+  animation-play-state: paused;
+}
+
+/* ── Single logo item ── */
+.brand-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 55px;
+  opacity: 0.75;
+  transition: opacity 0.25s ease, filter 0.25s ease;
+  flex-shrink: 0;
+}
+
+.brand-item:hover {
+  opacity: 1;
+  filter: brightness(0.55);
+}
+
+/* ── SVG sizing ── */
+.brand-svg {
+  width: 130px;
+  height: 70px;
+  display: block;
+}
+
+/* ── Keyframes ── */
+@keyframes brandScroll {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    /* move exactly half — since we duplicated the list */
+    transform: translateX(-50%);
+  }
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .brand-item {
+    padding: 0 30px;
+  }
+
+  .brand-svg {
+    width: 90px;
+    height: 50px;
+  }
+
+  .brand-track-wrapper::before,
+  .brand-track-wrapper::after {
+    width: 60px;
+  }
+}

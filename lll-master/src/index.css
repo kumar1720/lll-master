@@ -1,0 +1,33 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}
+
+.container {
+  width: 85%;
+  margin: auto;
+}
+
+.section-title {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 40px;
+  border-left: 4px solid #12b886;
+  padding-left: 15px;
+}
+
+.btn-primary {
+  background: #12b886;
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  cursor: pointer;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  color: #222;
+}

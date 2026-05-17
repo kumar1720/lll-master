@@ -1,0 +1,190 @@
+/* ===============================
+PROPERTY CONSULTANTS
+=============================== */
+.consultant-section {
+  padding: 80px 0;
+  background: #f5f5f5;
+}
+
+/* Header */
+.consultant-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 50px;
+}
+
+.consultant-header h2 {
+  font-size: 32px;
+  font-weight: 700;
+  position: relative;
+  padding-left: 25px;
+}
+
+.consultant-header h2::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 5px;
+  width: 4px;
+  height: 32px;
+  background: var(--primary-green);
+}
+
+/* Button */
+.consultant-btn {
+  background: #fff;
+  border: none;
+  padding: 14px 22px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Grid */
+.consultant-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+/* Card */
+.consultant-card {
+  position: relative;
+  background: #fff;
+  padding: 40px;
+  text-align: center;
+  overflow: hidden;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+/* Image — animate size + position on hover */
+.consultant-card img {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 20px;
+  position: relative;
+  z-index: 2;
+  transition: width 0.35s ease, height 0.35s ease, transform 0.35s ease;
+}
+
+/* Basic info */
+.consultant-basic {
+  position: relative;
+  z-index: 2;
+  transition: opacity 0.35s ease;
+}
+
+/* Text */
+.consultant-card h3 {
+  font-size: 22px;
+  margin-bottom: 5px;
+}
+
+.phone {
+  color: var(--primary-green);
+  font-weight: 600;
+}
+
+/* Hover Layer */
+.consultant-hover {
+  position: absolute;
+  inset: 0;
+  background: var(--primary-green);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2px;
+  padding: 20px 30px 24px;
+  padding-top: 75px;
+  /* space for the shrunken image floating above */
+  text-align: center;
+  opacity: 0;
+  z-index: 1;
+  transition: opacity 0.35s ease;
+}
+
+/* Hover heading */
+.consultant-hover h3 {
+  font-size: 20px;
+  font-weight: 700;
+  color: #fff;
+  margin: 0 0 2px;
+}
+
+/* Phone on hover */
+.consultant-hover .phone {
+  color: #fff;
+  font-weight: 600;
+  font-size: 14px;
+  margin: 0;
+}
+
+/* Hover description */
+.consultant-hover p {
+  margin: 8px 0 0;
+  line-height: 1.6;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.92);
+}
+
+/* Social icons */
+.consultant-social {
+  margin-top: 12px;
+  display: flex;
+  gap: 18px;
+  justify-content: center;
+}
+
+.consultant-social a,
+.consultant-social svg {
+  font-size: 18px;
+  cursor: pointer;
+  color: #fff;
+  opacity: 0.85;
+  transition: opacity 0.2s;
+}
+
+.consultant-social a:hover {
+  opacity: 1;
+}
+
+/* ── Hover state ── */
+.consultant-card:hover {
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+}
+
+/* Green overlay fades in */
+.consultant-card:hover .consultant-hover {
+  opacity: 1;
+}
+
+/* Basic info fades out */
+.consultant-card:hover .consultant-basic {
+  opacity: 0;
+}
+
+/* Shrink image so it fits fully inside the card on hover */
+.consultant-card:hover img {
+  width: 75px;
+  height: 75px;
+  transform: translateY(-10px);
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .consultant-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .consultant-header {
+    flex-direction: column;
+    gap: 20px;
+  }
+}
