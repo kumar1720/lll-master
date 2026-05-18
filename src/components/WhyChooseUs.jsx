@@ -1,4 +1,4 @@
-import "../assets/css/WhyChooseUs.css";
+import "../assets/css/WhyChooseus.css";
 import { FaHome, FaShoppingCart, FaUserTie, FaChartLine } from "react-icons/fa";
 import bgImage from "../assets/img/chooseus/chooseus-bg.jpg";
 
