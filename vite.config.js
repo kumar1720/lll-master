@@ -6,6 +6,9 @@ export default defineConfig({
   resolve: {
     dedupe: ['react', 'react-dom']
   },
+  preview: {
+    allowedHosts: true
+  },
   server: {
     proxy: {
       '/api/listings': {
