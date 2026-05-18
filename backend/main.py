@@ -1,6 +1,7 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from routers import chat, documents
+import os
 
 app = FastAPI(
     title="Laganlakshmi AI Chatbot API",
@@ -21,9 +22,15 @@ app.add_middleware(
 app.include_router(chat.router)
 app.include_router(documents.router)
 
-@app.get("/")
-async def root():
-    return {"message": "Welcome to Laganlakshmi AI API. Powered by FastAPI & Gemini."}
+# Mount the React frontend static files
+from fastapi.staticfiles import StaticFiles
+dist_path = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "dist"))
+if os.path.exists(dist_path):
+    app.mount("/", StaticFiles(directory=dist_path, html=True), name="static")
+else:
+    @app.get("/")
+    async def root():
+        return {"message": "Welcome to Laganlakshmi AI API. Powered by FastAPI & Gemini."}
 
 if __name__ == "__main__":
     import uvicorn
