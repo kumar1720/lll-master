@@ -15,4 +15,13 @@ class Settings(BaseSettings):
     class Config:
         env_file = ".env"
 
+    def __init__(self, **values):
+        super().__init__(**values)
+        if self.GEMINI_API_KEY:
+            self.GEMINI_API_KEY = self.GEMINI_API_KEY.strip().strip("'\"")
+        if self.PINECONE_API_KEY:
+            self.PINECONE_API_KEY = self.PINECONE_API_KEY.strip().strip("'\"")
+        if self.MONGODB_URL:
+            self.MONGODB_URL = self.MONGODB_URL.strip().strip("'\"")
+
 settings = Settings()
